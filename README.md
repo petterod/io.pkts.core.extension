@@ -115,4 +115,13 @@ Remember, this is a very basic check that is very likely to incorrectly claim th
 
 #### Implementing the frame-method.
 
+### Extension
+
+The fields added to the pkts.io version of IPv4 are DSCP, ECN and TTL. Traffic Class, Flow Label and Hop Limit are added to the pkts.io version of IPv6. The fields added to the pkts.io version of TCP are Reserved, the NS flag, Windows Size, Checksum and Urgent Pointer. TheUDP Checksum is also added. 
+
+The additional code is supplied in pkts-core/src/main/java/io.pkts.packet/ for the following interfaces: IPv4Packet.java, IPv6Packet.java, TCPPacket.java, UDPPacket.java. 
+
+The classes that inherited the methods of these interfaces, and thus also had code added,
+were IPv4PacketImpl.java, IPv6PacketImpl.java, TcpPacketImpl.java and UdpPacketImpl.java from the directory pkts-core/src/main/java/io.pkts.packet.impl/.
+
 
